@@ -18,12 +18,8 @@ class Books extends React.Component {
             <div className={"container mm-4 mt-5"}>
                 <div className={"row"}>
                     <div className={"table-responsive"}>
-                        <div className="col mb-3">
-                                <div className="col-sm-12 col-md-12">
-                                    <Link className={"btn btn-block btn-dark"} to={"/books/add"}>Add new book</Link>
-                                </div>
-                        </div>
-                        <table className={"table table-striped"}>
+
+                        <table className={"table table-hover table-dark"}>
                             <thead>
                             <tr>
                                 <th scope={"col"}>Name</th>
@@ -31,13 +27,19 @@ class Books extends React.Component {
                                 <th scope={"col"}>Author</th>
                                 <th scope={"col"}>Available Copies</th>
                                 <th scope={"col"}>Actions</th>
-                                <th scope={"col"}>Order Book</th>
+                                <th scope={"col"}>Take Book</th>
                             </tr>
                             </thead>
                             <tbody>
                                 {books}
                             </tbody>
                         </table>
+
+                        <div className="col mb-3">
+                            <div className="col-sm-12 col-md-12">
+                                <Link className={"btn btn-block btn-dark"} to={"/books/add"}>Add new book</Link>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -55,11 +57,10 @@ class Books extends React.Component {
                     <td>{term.availableCopies}</td>
                     <td>
                         <button title={"Delete"}
-                                className={"btn btn-dark"}
+                                className={"btn btn-danger"}
                                 onClick={() => this.props.onDelete(term.id)}
                         >Delete </button>
-                        <span> & </span>
-                        <Link className={"btn btn-outline-dark ml-2"}
+                        <Link className={"btn btn-primary btn-outline-dark ml-2"}
                               onClick={() => this.props.onEdit(term.id)}
                               to={`/books/edit/${term.id}`}>
                             Edit
@@ -67,8 +68,8 @@ class Books extends React.Component {
                     </td>
                     <td>
                         <button onClick={() => this.props.onOrder(term.id)}
-                                className={"btn btn-outline-dark"}
-                                disabled={term.availableCopies==0}>Select</button>
+                                className={"btn btn-primary btn-outline-dark"}
+                                disabled={term.availableCopies==0}>Mark this book</button>
                     </td>
                 </tr>
             );
