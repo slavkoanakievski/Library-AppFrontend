@@ -5,7 +5,7 @@ const categories = (props) => {
         <div className={"container mm-4 mt-5"}>
             <div className={"row"}>
                 <div className={"table-responsive"}>
-                    <table className={"table table-striped"}>
+                    <table className={"table table-dark"}>
                         <thead>
                         <tr>
                             <th scope={"col"}>Category name</th>

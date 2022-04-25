@@ -37,7 +37,7 @@ class Books extends React.Component {
 
                         <div className="col mb-3">
                             <div className="col-sm-12 col-md-12">
-                                <Link className={"btn btn-block btn-dark"} to={"/books/add"}>Add new book</Link>
+                                <Link className={"btn btn-block btn-success"} to={"/books/add"}>Add new book</Link>
                             </div>
                         </div>
 
@@ -51,7 +51,7 @@ class Books extends React.Component {
         return this.props.books.map((term, index) => {
             return (
                 <tr>
-                    <td>{term.name}</td>
+                    <td><b>{term.name}</b></td>
                     <td> <b> {term.book_category} </b></td>
                     <td>{term.author.name} {term.author.surname}</td>
                     <td>{term.availableCopies}</td>
